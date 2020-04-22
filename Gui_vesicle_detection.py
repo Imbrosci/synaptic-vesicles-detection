@@ -431,13 +431,12 @@ class VesAnalysisGui(tk.Frame):
                     proc_pmap[xx,yy]=0
 
         black=0,0,0
-        mid=230,100,230
         pink=230,0,230
 
         mask = cv2.resize(proc_pmap,(shape0,shape1))     
         mask=Image.fromarray(mask)
         mask=ImageOps.grayscale(mask)
-        mask=ImageOps.colorize(mask,black,pink,mid)       
+        mask=ImageOps.colorize(mask,black,pink)       
         mask=mask.convert('RGBA')
         
         pixeldata = mask.getdata()
