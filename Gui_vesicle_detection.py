@@ -242,7 +242,7 @@ class VesAnalysisGui(tk.Frame):
         sheet_name=list_path[-1]
         sheet_name=sheet_name.split('.')[0]
         
-        if (self.results_to_use.get()[-4:]=='xlsx') or (self.results_to_use.get()[-4:]=='xls'):
+        if (self.results_to_use.get()[-4:]=='xlsx') or (self.results_to_use.get()[-4:]=='.xls'):
             excel_filename=self.results_to_use.get()
         else:    
             excel_filename=self.results_to_use.get() +'.xlsx'
