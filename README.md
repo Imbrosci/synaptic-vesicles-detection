@@ -9,13 +9,14 @@
 (*env_name may be a name of your choice)
 
 2)	opencv, to install opencv you can use one of the following commands:
-conda install –c https://conda.binstar.org/menpo opencv
-conda install –c conda-forge opencv 
+ * conda install –c https://conda.binstar.org/menpo opencv
+ * conda install –c conda-forge opencv 
 
 3)	xlsxwriter,to install xlswriter you can use the following command: 
-conda install xlsxwriter
+* conda install xlsxwriter
 
-4)	pillow, to install pillow you can use the following command: conda install pillow
+4)	pillow, to install pillow you can use the following command: 
+* conda install pillow
 
 5)	pytorch torchvision, to install pytorch torchvision correctly follow the instruction at: https://pytorch.org/ 
 
