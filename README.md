@@ -46,7 +46,7 @@ Then, replace, in the directory synaptic-vesicles-detection/vesicles_analysis, t
 
 If everything works correctly the analysis will start automatically within a few seconds.
 The results will automatically be saved in an excel file which can be found under the directory vesicles_analysis. The name of the excel file will correspond to the name given to the experiment.  
-To perform a second round of analysis it is necessary to remove the already analysed images and to add the images to be analysed in the vesicles_analysis directory. To do not overwrite the excel file with the results, originated with the first round of analysis, it is important to choose a different experiment name. 
+To perform a second round of analysis it is necessary to remove the already analysed images and to add the images to be analysed in the vesicles_analysis directory. To do not overwrite the excel file containing the results originated with the first round of analysis, it is important to choose a different experiment name so that a different excel file will be generated. 
 
 ## Displaying the results 
 
@@ -64,13 +64,13 @@ It is also possible to visualize vesicle counts and mean nearest neighbor distan
 
 ## Final notes
 
-1.	We strongly recommend to run the analysis on a computer equipped with a graphics processing unit (GPU). The analysis of a single image of circa 4x4 micrometer should last only a few minutes with a GPU while it can last more than 30 min without a GPU.
+1.	We strongly recommend to run the analysis on a computer equipped with a graphics processing unit (GPU). The analysis of a single image of circa 4x4 micrometer without a GPU can take up to one hour, while with a GPU will take a few minutes.
 
 2.	During analysis the program will generate a mask for each image. The mask will automatically be named ‘imagename_mask’. To avoid that the program will treat an image as a mask and therefore skip the analysis for that image, it is important that the name of the images to analyse does not terminate with ‘mask’ (extension excluded). 
 
 3.	The files classifier_training.py and im_convered.py are not needed for running the analysis but they could be helpful in case one decides to re-train the model with her/his own data. In this case the training and validation dataset should be saved in a folder/subfolder data> train and data>test, respectively. 
 
 
-4.	The here presented algorithm was tested on images obtained using an EM900 (Zeiss) and a Tecnai G20 (Thermo Fisher Scientific) transmission electron microscopes operating at 80-120 kV. We cannot guarantee its performance on images obtained for example from scanning electron microscopes. In the unlucky case that it will not perform equally well on images acquired with a different system we would consider the possibility to create a separate training dataset to customize the model for the single need. 
+4.	The here presented algorithm was tested on images obtained using an EM900 (Zeiss) and a Tecnai G20 (Thermo Fisher Scientific) transmission electron microscopes operating at 80-120 kV. We cannot guarantee its performance on images obtained, for example, from scanning electron microscopes. In the unlucky case that it will not perform equally well on images acquired with a different system we would consider the possibility to create a separate training dataset to customize the model for the single need. 
 
 5.	In case of any problems with the execution of the algorithm you can contact us at: barbara.imbrosci@charite.de
