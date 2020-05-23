@@ -23,7 +23,7 @@
 ## Installation 
 
 Clone or download the following GitHub repository:
-https://github.com/Imbrosci/synaptic-vesicles-detection.git
+https://github.com/Imbrosci/synaptic-vesicles-detection.git.
 The file model.pth, containing the weights of the trained model, is too big to be download by git and therefore is replaced by a text file. In order to download it correctly, after having cloned-downloaded the repository, go to: 
 https://github.com/Imbrosci/synaptic-vesicles-detection/blob/master/vesicles_analysis/model.pth 
 and click download to download model.pth manually. 
@@ -31,8 +31,9 @@ Then, replace, in the directory synaptic-vesicles-detection/vesicles_analysis, t
 
 ## Preliminary steps before starting the analysis
 
-Creating a mask. To guarantee the detection of vesicles within a presynaptic terminal or within another subcellular structure of interest, the experimenter should create a black mask on all regions of the EM image outside the area of interest, including the plasma membrane. Furthermore, we recommend to create a black mask on mitochondria, multivesicular bodies and on membrane enclosed postsynaptic regions. This can easily be done with the program Fiji1. With this initial step, we noticed an optimal efficiency of the subsequent automated analysis. 
-Measuring the pixel size. To allow vesicle detection on EM images with different magnification and resolution we implemented a step to rescale the image so that a 40x40 pixel window would have the same size as the images we used to train the vesicle classifier (91.08 x 91.08 nm). For this step, the experimenter will be asked to provide the pixel size of the images to be analyzed.
+1) Creating a mask. To guarantee the detection of vesicles within a presynaptic terminal or within another subcellular structure of interest, the experimenter should create a black mask on all regions of the EM image outside the area of interest, including the plasma membrane. Furthermore, we recommend to create a black mask on mitochondria, multivesicular bodies and on membrane enclosed postsynaptic regions. This can easily be done with the program Fiji (Schindelin et al. 2012). 
+
+2) Measuring the pixel size. To allow vesicle detection on EM images with different magnification and resolution we implemented a step to rescale the image so that a 40x40 pixel window would have the same size as the images we used to train the vesicle classifier (91.08 x 91.08 nm). For this step, the experimenter will be asked to provide the pixel size of the images to be analyzed.
 
 1 Schindelin, J., Arganda-Carreras, I., Frise, E., Kaynig, V., Longair, M., Pietzsch, T., Preibisch, S., Rueden, C., Saalfeld, S., Schmid, B., Tinevez, J.-Y., White, D.J., Hartenstein, V., Eliceiri, K., Tomancak, P., Cardona, A., 2012. Fiji: an open-source platform for biological-image analysis. Nat. Methods 9, 676–682. https://doi.org/10.1038/nmeth.2019
 
