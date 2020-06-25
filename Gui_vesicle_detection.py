@@ -153,22 +153,23 @@ class VesAnalysisGui(tk.Frame):
             self.mask.save(image_dir+'/'+image_name+'_mask.tif')
             
             # getting the min distances between vesicles
-            x,y=zip(*self.coordinates)
-            X=np.array([x,y]).T
-            euc_distances=euclidean_distances(X, X)
-
-            euc_distances[np.where(euc_distances==0.0)]=10000
-            min_distances=[]
-            for i in range(euc_distances.shape[0]):
-                temp=min(euc_distances[i,:])
-                min_distances.append(temp*float(self.pixel_size.get()))
+            if len(self.coordinates)>0:
+                x,y=zip(*self.coordinates)
+                X=np.array([x,y]).T
+                euc_distances=euclidean_distances(X, X)
     
-            # extract the x,y coordinates and the distances of the detected vesicles
-            for i,e in enumerate(self.coordinates):
-                
-                sheet.write(i+1,0,e[0])
-                sheet.write(i+1,1,e[1])
-                sheet.write(i+1,2,min_distances[i])
+                euc_distances[np.where(euc_distances==0.0)]=10000
+                min_distances=[]
+                for i in range(euc_distances.shape[0]):
+                    temp=min(euc_distances[i,:])
+                    min_distances.append(temp*float(self.pixel_size.get()))
+        
+                # extract the x,y coordinates and the distances of the detected vesicles
+                for i,e in enumerate(self.coordinates):
+                    
+                    sheet.write(i+1,0,e[0])
+                    sheet.write(i+1,1,e[1])
+                    sheet.write(i+1,2,min_distances[i])
 
             sheet.write(0,0,'x_values')
             sheet.write(0,1,'y_values')            
@@ -422,13 +423,13 @@ class VesAnalysisGui(tk.Frame):
         # resize pmap and create a mask
         proc_pmap = cv2.resize(p_map,(np_img.shape[1],np_img.shape[0]))
         proc_pmap=cv2.blur(proc_pmap,(3,3))
-        proc_pmap=ndimage.gaussian_filter(proc_pmap,0.05)
-        proc_pmap=(proc_pmap / (np.max(proc_pmap))) *255
+        if np.max(proc_pmap)>0:
+            proc_pmap=(proc_pmap / (np.max(proc_pmap))) *255
         
         for xx in range(proc_pmap.shape[0]):
             for yy in range(proc_pmap.shape[1]):
                 if proc_pmap[xx,yy]<255/100*20: 
-                    proc_pmap[xx,yy]=0
+                    proc_pmap[xx,yy]=0                
 
         black=0,0,0
         pink=230,0,230
@@ -463,10 +464,10 @@ class VesAnalysisGui(tk.Frame):
                 transparent_list.append((pixel[0],pixel[1],pixel[2],90))
                     
         mask.putdata(transparent_list)
-               
+        
         # Counting the vesicles
         labelarray,counts=ndimage.measurements.label(proc_pmap)
-
+        
         x_labels=[]
         y_labels=[]
         
@@ -479,8 +480,12 @@ class VesAnalysisGui(tk.Frame):
             else:
                 for j in range(len(x)):
                     temp.append((x[j],y[j]))
-                    
-            euc_distances=euclidean_distances(temp,temp)  
+            
+            try:
+                euc_distances=euclidean_distances(temp,temp)  
+            except MemoryError:
+                break
+            
             max_distance=np.max(euc_distances)
                     
             potential_peaks=1
