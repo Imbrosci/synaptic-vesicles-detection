@@ -73,4 +73,6 @@ It is also possible to visualize vesicle counts and mean nearest neighbor distan
 
 4.	The here presented algorithm was tested on images obtained using an EM900 (Zeiss) and a Tecnai G20 (Thermo Fisher Scientific) transmission electron microscopes operating at 80-120 kV. We cannot guarantee its performance on images obtained, for example, from scanning electron microscopes. In the unlucky case that it will not perform equally well on images acquired with a different system we would consider the possibility to create a separate training dataset to customize the model for the single need. 
 
-5.	In case of any problems with the execution of the algorithm you can contact us at: barbara.imbrosci@charite.de
+## Reporting issues
+
+Issues can be reported in the issue tracker of this repository
