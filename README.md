@@ -76,7 +76,7 @@ Finally, if results are not satisfying, it is possible to edit them as following
 
 1.	We strongly recommend to run the analysis on a computer equipped with a graphics processing unit (GPU). This will drastically increase the speed of the analysis.
 
-2.	During analysis the program will generate a semi-transparent pink mask for each image, corresponding the the vesicles area. The mask will automatically be named ‘imagename_mask’. To avoid that the program will treat an image as a mask and therefore skip the analysis for that image, it is important that the name of the images to analyse does not terminate with ‘mask’ (extension excluded). 
+2.	During analysis the program will generate a semi-transparent pink mask for each image, corresponding t0 the vesicles area. The mask will automatically be named ‘imagename_mask’. To avoid that the program will treat an image as a mask and therefore skip the analysis for that image, it is important that the name of the images to analyse does not terminate with ‘mask’ (extension excluded). 
 
 3.	The files classifier_training.py, post_classifier_training.py and im_convered.py are not needed for running the analysis but they could be helpful in case one decides to re-train the model with her/his own data. In this case the training and validation dataset should be saved in a folder/subfolder data> train and data>test, respectively. 
 
