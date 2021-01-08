@@ -29,6 +29,7 @@ https://github.com/Imbrosci/synaptic-vesicles-detection/blob/master/vesicles_ana
 and click download to download model.pth manually. 
 Then, replace, in the directory synaptic-vesicles-detection/vesicles_analysis, the model.pth file downloaded by git with the manually downloaded one. 
 
+
 ## Preliminary steps before starting the analysis 
 
 Measuring the pixel size. To allow vesicle detection on EM images with different magnification and resolution we implemented a step to rescale the images so that a 40x40 pixel window would have the same size as the images we used to train the vesicle classifier (circa 90 x 90 nm). For this step, the experimenter will be asked to provide the pixel size (in nm) of the images to be analyzed.
