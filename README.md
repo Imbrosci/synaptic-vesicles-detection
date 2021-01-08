@@ -1,4 +1,4 @@
-# Synaptic vesicles automatic detection
+# Synaptic vesicles automated detection
 
 ### The present algorithm detects and localizes presynaptic vesicles in 2D electron micrographs.
 
@@ -31,7 +31,7 @@ Then, replace, in the directory synaptic-vesicles-detection/vesicles_analysis, t
 
 ## Preliminary steps before starting the analysis 
 
-Measuring the pixel size. To allow vesicle detection on EM images with different magnification and resolution we implemented a step to rescale the images so that a 40x40 pixel window would have the same size as the images we used to train the vesicle classifier (circa 90 x 90 nm). For this step, the experimenter will be asked to provide the pixel size of the images to be analyzed.
+Measuring the pixel size. To allow vesicle detection on EM images with different magnification and resolution we implemented a step to rescale the images so that a 40x40 pixel window would have the same size as the images we used to train the vesicle classifier (circa 90 x 90 nm). For this step, the experimenter will be asked to provide the pixel size (in nm) of the images to be analyzed.
 
 ## Starting the analysis
 
@@ -47,7 +47,7 @@ If everything works correctly the analysis will start automatically within a few
 The results will automatically be saved in an excel file which can be found under the directory vesicles_analysis. 
 The so generated excel file should consist of a summary result sheet with name and the vesicles count for each analyzed image and a separate sheet for each image containing the following information: the vesicle position, the distance to the nearest vesicle and the area for each detected vesicle. 
 The name of the excel file will correspond to the name given to the experiment.  
-To perform a second round of analysis it is necessary to remove the already analysed images and to add the images to be analysed in the vesicles_analysis directory. To do not overwrite the excel file containing the results originated with the first round of analysis, it is important to choose a different experiment name so that a different excel file will be generated. 
+To perform a second round of analysis it is necessary to remove the already analysed images and to add the images to be analysed in the vesicles_analysis directory. To avoid the overwriting of the excel file containing the results originated with the first round of analysis, it is important to choose a different experiment name for the second round of analysis, so that a different excel file will be generated. 
 
 ## Checking the results 
 
@@ -63,24 +63,24 @@ It is also possible to visualize vesicle counts, mean nearest neighbor distances
 2.	Enter the name of the experiment;
 3.	Select the directory where the excel file/s with the results are located (by default the excel files are generated in the directory vesicles_analysis). 
 
-Finally, if results are not satisfying, it is possible to edit them as following:
+Finally, if results are not satisfying, it is possible to manually correct them as following:
 
 1. Select Results_check > Manual correction;
 2. Enter the name of the experiment;
 3. Select an image (this will display the image and the detected vesicles as white dots);
-4. To add missed vesicles (false negatives) move the cursor to the missed vesicles and press the keyboard button ‘A’, a white dot should appear on the cursor position;
-5. To remove false positives move the cursor to the erroneously detected vesicles and press the keyboard button ‘D’, the white dot should turn into red;
+4. To add missed vesicles (false negatives): move the cursor to the missed vesicle and press the keyboard button ‘A’, a white dot should appear on the cursor position;
+5. To remove false positives: move the cursor to the erroneously detected vesicle and press the keyboard button ‘D’, the white dot should turn into red;
 6. Once corrections are finished press the keyboard button 'U' to update the results (the excel file with results will be rewritten).
 
 ## Final notes
 
 1.	We strongly recommend to run the analysis on a computer equipped with a graphics processing unit (GPU). This will drastically increase the speed of the analysis.
 
-2.	During analysis the program will generate a semi-transparent pink mask for each image, corresponding t0 the vesicles area. The mask will automatically be named ‘imagename_mask’. To avoid that the program will treat an image as a mask and therefore skip the analysis for that image, it is important that the name of the images to analyse does not terminate with ‘mask’ (extension excluded). 
+2.	During analysis the program will generate a semi-transparent pink mask for each image, corresponding t0 the vesicles area. The mask will automatically be named ‘imagename_mask’. Avoid naming the images that you want to analyse with a name that terminate with ‘mask’ (extension excluded), otherwise the program will treat the image as a mask and will skip the analysis for that image.
 
 3.	The files classifier_training.py, post_classifier_training.py and im_convered.py are not needed for running the analysis but they could be helpful in case one decides to re-train the model with her/his own data. In this case the training and validation dataset should be saved in a folder/subfolder data> train and data>test, respectively. 
 
-4.	The here presented algorithm performed well on images obtained using an EM900 (Zeiss) and a Tecnai G20 (Thermo Fisher Scientific) transmission electron microscopes operating at 80-120 kV. The performance on images obtained with a scanning electron microscope was slightly inferior. If needed you should consider the possibility to create a separate training dataset to customize the model for the single need. To this end we provide the source code containing the employed classifiers (vesicle_classifier.py)  as well as the source codes to train the classifiers (classifier_training.py and post_classifier_training.py). For more information on how to train the model with your own data and on how to create a suited dataset you can contact us via the issue tracker. 
+4.	The here presented algorithm performed well on images obtained using an EM900 (Zeiss), a JEM-1011 (JEOL), and a Tecnai G20 (Thermo Fisher Scientific) transmission electron microscopes operating at 80-120 kV. The performance on images obtained with a scanning electron microscope was slightly inferior. If needed you should consider the possibility to create a separate training dataset to customize the model for the single need. To this end we provide the source code containing the employed classifiers (vesicle_classifier.py)  as well as the source codes to train the classifiers (classifier_training.py and post_classifier_training.py). For more information on how to train the model with your own data and on how to create a suited dataset you can contact us via the issue tracker. 
 
 ## Reporting issues
 
