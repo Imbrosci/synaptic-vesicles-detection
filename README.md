@@ -74,12 +74,11 @@ Finally, if results are not satisfying, it is possible to edit them as following
 
 ## Final notes
 
-1.	We strongly recommend to run the analysis on a computer equipped with a graphics processing unit (GPU). The analysis of a single image of circa 4x4 micrometer without a GPU can take up to one hour, while with a GPU will take a few minutes.
+1.	We strongly recommend to run the analysis on a computer equipped with a graphics processing unit (GPU). This will drastically increase the speed of the analysis.
 
-2.	During analysis the program will generate a mask for each image. The mask will automatically be named ‘imagename_mask’. To avoid that the program will treat an image as a mask and therefore skip the analysis for that image, it is important that the name of the images to analyse does not terminate with ‘mask’ (extension excluded). 
+2.	During analysis the program will generate a semi-transparent pink mask for each image, corresponding the the vesicles area. The mask will automatically be named ‘imagename_mask’. To avoid that the program will treat an image as a mask and therefore skip the analysis for that image, it is important that the name of the images to analyse does not terminate with ‘mask’ (extension excluded). 
 
-3.	The files classifier_training.py and im_convered.py are not needed for running the analysis but they could be helpful in case one decides to re-train the model with her/his own data. In this case the training and validation dataset should be saved in a folder/subfolder data> train and data>test, respectively. 
-
+3.	The files classifier_training.py, post_classifier_training.py and im_convered.py are not needed for running the analysis but they could be helpful in case one decides to re-train the model with her/his own data. In this case the training and validation dataset should be saved in a folder/subfolder data> train and data>test, respectively. 
 
 4.	The here presented algorithm performed well on images obtained using an EM900 (Zeiss) and a Tecnai G20 (Thermo Fisher Scientific) transmission electron microscopes operating at 80-120 kV. The performance on images obtained with a scanning electron microscope was slightly inferior. If needed you should consider the possibility to create a separate training dataset to customize the model for the single need. To this end we provide the source code containing the employed classifiers (vesicle_classifier.py)  as well as the source codes to train the classifiers (classifier_training.py and post_classifier_training.py). For more information on how to train the model with your own data and on how to create a suited dataset you can contact us via the issue tracker. 
 
