@@ -13,32 +13,32 @@ from torchvision import datasets,transforms
 import matplotlib.pyplot as plt
 import numpy as np
 from im_converter import im_convert
-from vesicle_classifier import MultiClass
+from vesicle_classifier import MultiClassPost
 from dataset_modifications import AddGaussianNoise
+
 #%%
-torch.manual_seed(2809)
+torch.manual_seed(2800)
 torch.backends.cudnn.deterministic = True 
 
 device=torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 device
 
 #%% transform with data  and load data
-transform_train=transforms.Compose([transforms.Resize((40,40)),
+transform_train=transforms.Compose([transforms.Resize((80,80)),
                                     transforms.ColorJitter(brightness=0.2,contrast=0.2,saturation=0.2),
                                     transforms.RandomRotation(10),
                                     transforms.ToTensor(),
                                     transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5)),
-                                    transforms.RandomApply([AddGaussianNoise(0,0.05)],p=0.1),
-                                    transforms.RandomApply([AddGaussianNoise(0,0.1)],p=0.2)]) 
+                                    transforms.RandomApply([AddGaussianNoise(0,0.1)],p=0.1)]) 
 
 
 
-transform_test=transforms.Compose([transforms.Resize((40,40)),transforms.ToTensor(),transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5))]) 
+transform_test=transforms.Compose([transforms.Resize((80,80)),transforms.ToTensor(),transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5))]) 
 
-training_dataset=datasets.ImageFolder(root=os.path.join('data','train'),transform=transform_train) #training and validation dataset is already divided
+training_dataset=datasets.ImageFolder(root=os.path.join('data_post','train'),transform=transform_train) #training and validation dataset is already divided
 training_loader=torch.utils.data.DataLoader(dataset=training_dataset,batch_size=100, shuffle=True)
 
-testing_dataset=datasets.ImageFolder(root=os.path.join('data','test'),transform=transform_test) #training and validation dataset is already divided
+testing_dataset=datasets.ImageFolder(root=os.path.join('data_post','test'),transform=transform_test) #training and validation dataset is already divided
 
 validation_loader=torch.utils.data.DataLoader(dataset=testing_dataset,batch_size=100, shuffle=False)
 
@@ -54,9 +54,9 @@ print('Image shape: ',images.shape)
 
 #%% Defining the model
 
-model=MultiClass(out=2).to(device)
+model=MultiClassPost(out=2).to(device)
 criterion=nn.CrossEntropyLoss() 
-optimizer=torch.optim.Adam(model.parameters(),lr=0.0002)
+optimizer=torch.optim.Adam(model.parameters(),lr=0.0004)
 
 #%% Training
 
@@ -70,9 +70,9 @@ val_running_precision_history=[]
 val_running_recall_history=[]
 counter_list=[]
 #%%
-epochs=25
+epochs=55
 
-for e in range(epochs):
+for e in range(40,epochs):
     running_loss=0.0
     running_correct=0.0
     val_running_loss=0.0
@@ -151,14 +151,20 @@ for e in range(epochs):
     rec_denom=rec_denom.numpy()    
     running_loss_history.append(epoch_loss)
     running_correct_history.append(epoch_accuracy)
-    running_precision_history.append(true_pos/prec_denom*100)    
+    if prec_denom==0:
+        running_precision_history.append(0)
+    else:
+        running_precision_history.append(true_pos/prec_denom*100)    
     running_recall_history.append(true_pos/rec_denom*100)   
             
     val_prec_denom=val_prec_denom.numpy()
     val_rec_denom=val_rec_denom.numpy()    
     val_running_loss_history.append(val_epoch_loss)
     val_running_correct_history.append(val_epoch_accuracy)
-    val_running_precision_history.append(val_true_pos/val_prec_denom*100)    
+    if val_prec_denom==0:
+        val_running_precision_history.append(0)
+    else:
+        val_running_precision_history.append(val_true_pos/val_prec_denom*100)    
     val_running_recall_history.append(val_true_pos/val_rec_denom*100)    
 
     print('Epoch, training loss, training accuracy: {:},{:.4f},{:.4f}'.format(e,epoch_loss,epoch_accuracy)) #,{:.d} this is called place holder
@@ -171,7 +177,7 @@ for e in range(epochs):
     torch.save(model.state_dict(), os.path.join('/alzheimer/barbara','model_dir', 'epoch-{}.pth'.format(e)))
 
     
-#%
+#%%
 f1=[]
 for i in range(epochs):
     f1.append(2*(val_running_precision_history[i]*val_running_recall_history[i])/(val_running_precision_history[i]+val_running_recall_history[i]))    
@@ -181,7 +187,7 @@ for i in range(epochs):
     f1_train.append(2*(running_precision_history[i]*running_recall_history[i])/(running_precision_history[i]+running_recall_history[i]))    
 
       
-#%%
+#%
 
 plt.figure()
     
