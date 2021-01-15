@@ -5,7 +5,7 @@
 
 ## Prerequisites 
 
-1)	Anaconda with python 3 (https://www.anaconda.com/distribution/). Due to incompatibility issues we recommend to use python 3.6. In case your python version is different you may want to create and activate a virtual environment. To create a virtual environment type: conda create –n env_name anaconda python=3.6. To activate the created virtual enviroment type: conda activate env_name or source activate env_name 
+1)	Anaconda with python 3 (https://www.anaconda.com/distribution/). We recommend to use python 3.6 or 3.7. In case your python version is different you may want to create and activate a virtual environment. For instance, to create a virtual environment with python 3.6, type: conda create –n env_name anaconda python=3.6. To activate the created virtual enviroment type: conda activate env_name or source activate env_name 
 (*env_name may be a name of your choice)
 
 2)	opencv, to install opencv you can use one of the following commands:
@@ -30,7 +30,7 @@ and click download to download model.pth manually.
 Then, replace, in the directory synaptic-vesicles-detection/vesicles_analysis, the model.pth file downloaded by git with the manually downloaded one. 
 
 
-## Preliminary steps before starting the analysis 
+## Preliminary step before starting the analysis 
 
 Measuring the pixel size. To allow vesicle detection on EM images with different magnification and resolution we implemented a step to rescale the images so that a 40x40 pixel window would have the same size as the images we used to train the vesicle classifier (circa 90 x 90 nm). For this step, the experimenter will be asked to provide the pixel size (in nm) of the images to be analyzed.
 
@@ -77,11 +77,13 @@ Finally, if results are not satisfying, it is possible to manually correct them 
 
 1.	We strongly recommend to run the analysis on a computer equipped with a graphics processing unit (GPU). This will drastically increase the speed of the analysis.
 
-2.	During analysis the program will generate a semi-transparent pink mask for each image, corresponding t0 the vesicles area. The mask will automatically be named ‘imagename_mask’. Avoid naming the images that you want to analyse with a name that terminate with ‘mask’ (extension excluded), otherwise the program will treat the image as a mask and will skip the analysis for that image.
+2.	During analysis the program will generate a semi-transparent pink mask for each image, corresponding to the vesicles area. The mask will automatically be named ‘imagename_mask’. Avoid naming the images that you want to analyse with a name that terminate with ‘mask’ (extension excluded), otherwise the program will treat the image as a mask and will skip the analysis for that image.
 
-3.	The files classifier_training.py, post_classifier_training.py and im_convered.py are not needed for running the analysis but they could be helpful in case one decides to re-train the model with her/his own data. In this case the training and validation dataset should be saved in a folder/subfolder data> train and data>test, respectively. 
+3. We recommend to use 8-bit images or to convert them to 8-bit whether necessary. 
 
-4.	The here presented algorithm performed well on images obtained using an EM900 (Zeiss), a JEM-1011 (JEOL), and a Tecnai G20 (Thermo Fisher Scientific) transmission electron microscopes operating at 80-120 kV. The performance on images obtained with a scanning electron microscope was slightly inferior. If needed you should consider the possibility to create a separate training dataset to customize the model for the single need. To this end we provide the source code containing the employed classifiers (vesicle_classifier.py)  as well as the source codes to train the classifiers (classifier_training.py and post_classifier_training.py). For more information on how to train the model with your own data and on how to create a suited dataset you can contact us via the issue tracker. 
+4.	The files classifier_training.py, post_classifier_training.py and im_convered.py are not needed for running the analysis but they could be helpful in case one decides to re-train the model with her/his own data. In this case the training and validation dataset should be saved in a folder/subfolder data> train and data>test, respectively. 
+
+5.	The here presented algorithm performed well on images obtained using an EM900 (Zeiss), a JEM-1011 (JEOL), and a Tecnai G20 (Thermo Fisher Scientific) transmission electron microscopes operating at 80-120 kV. The performance on images obtained with a scanning electron microscope was slightly inferior. If needed you should consider the possibility to create a separate training dataset to customize the model for the single need. To this end we provide the source code containing the employed classifiers (vesicle_classifier.py)  as well as the source codes to train the classifiers (classifier_training.py and post_classifier_training.py). For more information on how to train the model with your own data and on how to create a suited dataset you can contact us via the issue tracker. 
 
 ## Reporting issues
 
