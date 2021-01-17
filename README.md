@@ -77,13 +77,15 @@ Finally, if results are not satisfying, it is possible to manually correct them 
 
 1.	We strongly recommend to run the analysis on a computer equipped with a graphics processing unit (GPU). This will drastically increase the speed of the analysis.
 
-2.	During analysis the program will generate a semi-transparent pink mask for each image, corresponding to the vesicles area. The mask will automatically be named ‘imagename_mask’. Avoid naming the images that you want to analyse with a name that terminate with ‘mask’ (extension excluded), otherwise the program will treat the image as a mask and will skip the analysis for that image.
+2.	During analysis the program will generate a semi-transparent pink mask for each image, corresponding to the estimated vesicles area. The mask will automatically be named ‘imagename_mask’. Avoid naming the images that you want to analyse with a name that terminate with ‘mask’ (extension excluded), otherwise the program will treat the image as a mask and will skip the analysis for that image.
 
-3. We recommend to use 8-bit images or to convert them to 8-bit whether necessary. 
+3. We recommend to use 8-bit images, otherwise problems by displaying the results may occur.
 
-4.	The files classifier_training.py, post_classifier_training.py and im_convered.py are not needed for running the analysis but they could be helpful in case one decides to re-train the model with her/his own data. In this case the training and validation dataset should be saved in a folder/subfolder data> train and data>test, respectively. 
+4. In the folder training-testing-images we provide the images we used for creating patches to train the two netowrks we used  (model and model_post) and the images used for final testing. 
 
-5.	The here presented algorithm performed well on images obtained using an EM900 (Zeiss), a JEM-1011 (JEOL), and a Tecnai G20 (Thermo Fisher Scientific) transmission electron microscopes operating at 80-120 kV. The performance on images obtained with a scanning electron microscope was slightly inferior. If needed you should consider the possibility to create a separate training dataset to customize the model for the single need. To this end we provide the source code containing the employed classifiers (vesicle_classifier.py)  as well as the source codes to train the classifiers (classifier_training.py and post_classifier_training.py). For more information on how to train the model with your own data and on how to create a suited dataset you can contact us at barbara.imbrosci@googlemail.com or marta.orlando@charite.de. 
+5.	The files classifier_training.py, post_classifier_training.py and im_convered.py are not needed for running the analysis but they could be helpful in case one decides to re-train the model with her/his own data. In this case the training and validation dataset should be saved in a folder/subfolder data> train and data>test, respectively. 
+
+6.	The here presented algorithm performed well on images obtained using an EM900 (Zeiss), a JEM-1011 (JEOL), and a Tecnai G20 (Thermo Fisher Scientific) transmission electron microscopes operating at 80-120 kV. The performance on images obtained with a scanning electron microscope was slightly inferior. If needed you should consider the possibility to create a separate training dataset to customize the model for the single need. To this end we provide the source code containing the employed classifiers (vesicle_classifier.py)  as well as the source codes to train the classifiers (classifier_training.py and post_classifier_training.py). For more information on how to train the model with your own data and on how to create a suited dataset you can contact us at barbara.imbrosci@googlemail.com or marta.orlando@charite.de. 
 
 ## Reporting issues
 
