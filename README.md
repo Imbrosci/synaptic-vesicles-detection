@@ -71,7 +71,7 @@ Finally, if results are not satisfying, it is possible to manually correct them 
 3. Select an image (this will display the image and the detected vesicles as white dots);
 4. To add missed vesicles (false negatives): move the cursor to the missed vesicle and press the keyboard button ‘A’, a white dot should appear on the cursor position;
 5. To remove false positives: move the cursor to the erroneously detected vesicle and press the keyboard button ‘D’, the white dot should turn into red;
-6. Once corrections are finished press the keyboard button 'U' to update the results (the excel file with results will be rewritten).
+6. Once corrections are finished press the keyboard button 'U' to update the results (at this stage, you will be asked again to provide the pixel size of the image). Once the update is done, the excel file will contain the corrected results.
 
 ## Final notes
 
