@@ -10,17 +10,17 @@
 
 
 2)	opencv, to install opencv you may try one of the following commands (if, after installation, the module cv2 is not found you may need to uninstall opencv and try to install it with another command):
-* python -m pip install opencv-python
-* conda install –c https://conda.binstar.org/menpo opencv
-* conda install –c conda-forge opencv 
+  * python -m pip install opencv-python
+  * conda install –c https://conda.binstar.org/menpo opencv
+  * conda install –c conda-forge opencv 
 
 
 3)	xlsxwriter,to install xlswriter you can use the following command: 
- * conda install xlsxwriter
+  * conda install xlsxwriter
 
 
 4)	pillow, to install pillow you can use the following command: 
- * conda install pillow
+  * conda install pillow
 
 
 5)	pytorch torchvision, to install pytorch torchvision correctly follow the instruction at: https://pytorch.org/ 
