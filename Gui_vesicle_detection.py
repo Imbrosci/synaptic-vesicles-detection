@@ -870,7 +870,7 @@ class VesAnalysisGui(tk.Frame):
         self.fig=Figure(figsize=(10,8))
         self.ax=self.fig.add_subplot(1,1,1)
         self.ax.imshow(img,cmap='gray') 
-        self.ax.scatter(x,y,c='white',s=4)
+        self.ax.scatter(x,y,c='blue',s=4)
     
         try:
             self.canvas3.get_tk_widget().pack_forget()
@@ -912,7 +912,7 @@ class VesAnalysisGui(tk.Frame):
             else:
                 self.new_values=np.array(new_xy_datapoint).reshape(1,-1)
                 
-            self.ax.scatter(event.xdata,event.ydata,c='white',s=4)
+            self.ax.scatter(event.xdata,event.ydata,c='blue',s=4)
             self.fig.canvas.draw()
                 
         if event.key == 'd':
