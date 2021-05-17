@@ -33,7 +33,7 @@ https://github.com/Imbrosci/synaptic-vesicles-detection.git.
 The file model.pth, containing the weights of the trained model, is too big to be download by git and therefore is replaced by a text file. In order to download it correctly, after having cloned-downloaded the repository, go to: 
 https://github.com/Imbrosci/synaptic-vesicles-detection/blob/master/vesicles_analysis/model.pth 
 and click download to download model.pth manually. 
-Then, replace, in the directory synaptic-vesicles-detection/vesicles_analysis, the model.pth file downloaded by git with the manually downloaded one. 
+Then, replace, in the directory synaptic-vesicles-detection/vesicles_analysis, the model.pth file downloaded by git with the manually downloaded one. The same procedure needs to be followed to correctly download the training-testing-images. 
 
 
 ## Preliminary step before starting the analysis 
