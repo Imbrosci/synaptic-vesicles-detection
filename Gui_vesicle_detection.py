@@ -304,6 +304,8 @@ class VesAnalysisGui(tk.Frame):
         self.ax.imshow(img,cmap='gray') 
         self.ax.imshow(mask)
         self.ax.scatter(x,y,c='white',s=4)
+        self.ax.set_xticks([])
+        self.ax.set_yticks([])
     
         try:
             self.canvas3.get_tk_widget().pack_forget()
@@ -871,6 +873,8 @@ class VesAnalysisGui(tk.Frame):
         self.ax=self.fig.add_subplot(1,1,1)
         self.ax.imshow(img,cmap='gray') 
         self.ax.scatter(x,y,c='blue',s=4)
+        self.ax.set_xticks([])
+        self.ax.set_yticks([])
     
         try:
             self.canvas3.get_tk_widget().pack_forget()
