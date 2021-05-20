@@ -168,10 +168,10 @@ for e in range(epochs):
     print('---------------------------------------------------------------------------')
     
     # here change accordingly the directory where to save the weights of the model after each epoch
-    torch.save(model.state_dict(), os.path.join('/alzheimer/barbara','model_dir', 'epoch-{}.pth'.format(e)))
+    torch.save(model.state_dict(), os.path.join('/path','model_dir', 'epoch-{}.pth'.format(e)))
 
     
-#%
+#%%
 f1=[]
 for i in range(epochs):
     f1.append(2*(val_running_precision_history[i]*val_running_recall_history[i])/(val_running_precision_history[i]+val_running_recall_history[i]))    
@@ -181,46 +181,6 @@ for i in range(epochs):
     f1_train.append(2*(running_precision_history[i]*running_recall_history[i])/(running_precision_history[i]+running_recall_history[i]))    
 
       
-#%%
-
-plt.figure()
-    
-plt.plot(range(1,epochs+1),f1_train,color='black',label='training_set')
-plt.plot(range(1,epochs+1),f1,color='blue',label='validation_set')
-plt.xlabel('Epochs',size=18)
-plt.ylabel('F1-score',size=18)
-plt.legend(loc=4)
 
 
-plt.figure()
-    
-plt.plot(range(1,epochs+1),running_loss_history,color='black',label='training_set')
-plt.plot(range(1,epochs+1),val_running_loss_history,color='blue',label='validation_set')
-plt.xlabel('Epochs',size=18)
-plt.ylabel('Loss',size=18)
-plt.legend(loc=1)
-
-
-plt.figure()
-plt.plot(range(1,epochs+1),running_correct_history,color='black',label='training_set')
-plt.plot(range(1,epochs+1),val_running_correct_history,color='blue',label='validation_set')
-plt.xlabel('Epochs',size=18)
-plt.ylabel('% accuracy',size=18)
-plt.legend(loc=4)
-
-   
-plt.figure()
-plt.plot(range(1,epochs+1),running_precision_history,color='black',label='training_set')
-plt.plot(range(1,epochs+1),val_running_precision_history,color='blue',label='validation_set')
-plt.xlabel('Epochs',size=18)
-plt.ylabel('% precision',size=18)
-plt.legend(loc=4)
-
-
-plt.figure()
-plt.plot(range(1,epochs+1),running_recall_history,color='black',label='training_set')
-plt.plot(range(1,epochs+1),val_running_recall_history,color='blue',label='validation_set')
-plt.xlabel('Epochs',size=18)
-plt.ylabel('% recall',size=18)
-plt.legend(loc=4)
 
