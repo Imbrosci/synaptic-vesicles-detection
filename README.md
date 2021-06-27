@@ -89,7 +89,7 @@ Finally, if results are not satisfying, it is possible to manually correct them 
 
 4. In the folder training-testing-images we provide the images we used for creating patches to train the two netowrks we used and our images used for final testing. 
 
-5.	The files classifier_training.py, post_classifier_training.py and im_convered.py are not needed for running the analysis but they could be helpful in case one decides to re-train the model with her/his own data. 
+5.	The files classifier_training.py, post_classifier_training.py, dataset_modifications.py and im_convered.py are not needed for running the analysis but they could be helpful in case one decides to re-train the model with her/his own data. 
 
 6.	The here presented algorithm performed well on images obtained using an EM900 (Zeiss), a JEM-1011 (JEOL), and a Tecnai G20 (Thermo Fisher Scientific) transmission electron microscopes operating at 80-120 kV. The performance on images obtained with a scanning electron microscope was slightly inferior. If needed you should consider the possibility to create a separate training dataset to customize the model for the single need. To this end we provide the source code containing the employed classifiers (vesicle_classifier.py)  as well as the source codes to train the classifiers (classifier_training.py and post_classifier_training.py). For more information on how to train the model with your own data and on how to create a suited dataset you can contact us at barbara.imbrosci@googlemail.com or marta.orlando@charite.de. 
 
