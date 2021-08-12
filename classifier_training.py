@@ -12,7 +12,6 @@ import torch.nn.functional as F
 from torchvision import datasets,transforms
 import matplotlib.pyplot as plt
 import numpy as np
-from im_converter import im_convert
 from vesicle_classifier import MultiClass
 from dataset_modifications import AddGaussianNoise
 #%%
