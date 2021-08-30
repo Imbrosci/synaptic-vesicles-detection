@@ -5,27 +5,13 @@
 
 ## Prerequisites 
 
-1)	Anaconda with python 3 (https://www.anaconda.com/distribution/). We recommend to use python 3.6 or 3.7. In case your python version is different you may want to create and activate a virtual environment. For instance, to create a virtual environment with python 3.6, type: conda create –n env_name anaconda python=3.6. To activate the created virtual enviroment type: conda activate env_name or source activate env_name 
+1)	Anaconda with python 3 (https://www.anaconda.com/distribution/). We recommend to use python 3.6 or 3.7 and to create (and to activate) a virtual environment. To create a virtual environment with python 3.6, type: conda create –n env_name anaconda python=3.6. To activate the created virtual enviroment type: conda activate env_name or source activate env_name 
 (*env_name may be a name of your choice)
 
+2)	pytorch torchvision, please to install pytorch torchvision correctly follow the instruction at: https://pytorch.org/ 
 
-2)	opencv, to install opencv you may try one of the following commands (if, after installation, the module cv2 is not found you may need to uninstall opencv and try to install it with another command):
-  * python -m pip install opencv-python
-  * conda install –c https://conda.binstar.org/menpo opencv
-  * conda install –c conda-forge opencv 
-
-
-3)	xlsxwriter,to install xlswriter you can use the following command: 
-  * conda install xlsxwriter
-
-
-4)	pillow, to install pillow you can use the following command: 
-  * conda install pillow
-
-
-5)	pytorch torchvision, to install pytorch torchvision correctly follow the instruction at: https://pytorch.org/ 
-
-Alternatively, the required dependencies (expect from pytorch torchvision) can be installed using the provided requirements.txt file. To use this option, save first the requirements.txt file, navigate to the directory where this file is saved and type the following command: pip install -r requirements.txt
+3) Additional required dependencies can be installed using the provided requirements.txt file. To this end, save first the requirements.txt file, navigate to the directory where you saved this file and type the following command: 
+  * pip install -r requirements.txt
 
 
 ## Installation 
