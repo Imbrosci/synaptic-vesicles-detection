@@ -69,7 +69,7 @@ Finally, if results are not satisfying, it is possible to manually correct them 
 
 ## Final notes
 
-1.	We strongly recommend to run the analysis on a computer equipped with a graphics processing unit (GPU). This will drastically increase the speed of the analysis. Also, note that tkinter crashes on some macOS verions.
+1.	We strongly recommend to run the analysis on a computer equipped with a graphics processing unit (GPU). This will drastically increase the speed of the analysis. Also, note that tkinter may crashes on macOS.
 
 2.	During analysis the program will generate a semi-transparent pink mask for each image, corresponding to the estimated vesicles area. The mask will automatically be named ‘imagename_mask’. Avoid naming the images that you want to analyse with a name that terminate with ‘mask’ (extension excluded), otherwise the program will treat the image as a mask and will skip the analysis for that image.
 
