@@ -25,6 +25,8 @@
 
 5)	pytorch torchvision, to install pytorch torchvision correctly follow the instruction at: https://pytorch.org/ 
 
+Alternatively, the required dependencies (expect from pytorch torchvision) can be installed using the provided requirements.txt file. To use this option, save first the requirements.txt file, navigate to the directory where this file is saved and type the following command: pip install -r requirements.txt
+
 
 ## Installation 
 
