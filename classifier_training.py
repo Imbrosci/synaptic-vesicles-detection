@@ -15,7 +15,7 @@ from torchvision import datasets,transforms
 import matplotlib.pyplot as plt
 import numpy as np
 from vesicle_classifier import MultiClass, GaussianNoiseAddition
-from dataset_modifications import AddGaussianNoise
+
 #%%
 torch.manual_seed(2809)
 torch.backends.cudnn.deterministic = True 
