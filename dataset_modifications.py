@@ -3,6 +3,8 @@
 """
 Created on Wed Oct 28 12:06:59 2020
 
+Add Gaussian noise to tensors
+
 @author: barbara
 """
 import torch
