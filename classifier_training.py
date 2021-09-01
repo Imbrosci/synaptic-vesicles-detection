@@ -23,7 +23,7 @@ torch.backends.cudnn.deterministic = True
 device=torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 device
 
-#%% transform with data  and load data
+#%% transform and load the data
 transform_train=transforms.Compose([transforms.Resize((40,40)),
                                     transforms.ColorJitter(brightness=0.2,contrast=0.2,saturation=0.2),
                                     transforms.RandomRotation(10),
