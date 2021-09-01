@@ -29,8 +29,8 @@ transform_train=transforms.Compose([transforms.Resize((40,40)),
                                     transforms.RandomRotation(10),
                                     transforms.ToTensor(),
                                     transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5)),
-                                    transforms.RandomApply([AddGaussianNoise(0,0.05)],p=0.1),
-                                    transforms.RandomApply([AddGaussianNoise(0,0.1)],p=0.2)]) 
+                                    transforms.RandomApply([GaussianNoiseAddition(0,0.05)],p=0.1),
+                                    transforms.RandomApply([GaussianNoiseAddition(0,0.1)],p=0.2)]) 
 
 
 
