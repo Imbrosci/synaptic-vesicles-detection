@@ -2,6 +2,9 @@
 """
 Created on Wed Nov 20 17:53:45 2019
 
+Train the vesicle classifier (MultiClassPost) and evaluate its performance on training and validation dataset.
+
+
 @author: imbroscb
 """
 
