@@ -3,6 +3,8 @@
 """
 Created on Thu Apr  2 11:04:55 2020
 
+Run the GUI.
+
 @author: imbroscb
 """
 
