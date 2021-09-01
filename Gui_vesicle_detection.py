@@ -2,6 +2,8 @@
 """
 Created on Fri Jan 17 10:35:25 2020
 
+Generate the GUI and to conduct image analysis, result visualization and proof-reading.
+
 @author: imbroscb
 """
 import numpy as np
