@@ -2,6 +2,8 @@
 """
 Created on Wed Nov 20 15:08:53 2019
 
+Convolutional neural networks (MultiClass and MultiClassPost) used for detecting synaptic vesicles.
+
 @author: imbroscb
 """
 #%%
