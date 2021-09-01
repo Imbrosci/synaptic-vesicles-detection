@@ -15,7 +15,6 @@ from torchvision import datasets,transforms
 import matplotlib.pyplot as plt
 import numpy as np
 from vesicle_classifier import MultiClassPost,GaussianNoiseAddition
-from dataset_modifications import AddGaussianNoise
 
 #%%
 torch.manual_seed(2800)
