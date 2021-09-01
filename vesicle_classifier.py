@@ -2,7 +2,7 @@
 """
 Created on Wed Nov 20 15:08:53 2019
 
-Convolutional neural networks (MultiClass and MultiClassPost) used for detecting synaptic vesicles.
+Convolutional neural networks (MultiClass and MultiClassPost) used for detecting synaptic vesicles and class to add Gaussian Noise to tensors.
 
 @author: imbroscb
 """
@@ -163,3 +163,14 @@ class MultiClassPost(nn.Module):
         x=self.fc4(x)
 
         return x  
+
+class GaussianNoiseAddition(object):
+    def __init__(self,mean=0.,stdev=1.):
+        self.mean=mean
+        self.stdev=stdev
+    
+    def __call__(self,tensor):
+        return tensor + torch.randn(tensor.size())*self.stdev+self.mean
+    
+    def __repr__(self):
+        return self.__class__.name__ + '(mean={0}, std{1})'.format(self.mean,self.stdev)   
