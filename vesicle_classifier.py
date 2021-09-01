@@ -163,6 +163,7 @@ class MultiClassPost(nn.Module):
         x=self.fc4(x)
 
         return x  
+#%%
 
 class GaussianNoiseAddition(object):
     def __init__(self,mean=0.,stdev=1.):
