@@ -1,6 +1,6 @@
 # Synaptic vesicles automated detection
 
-### The present algorithm detects and localizes presynaptic vesicles in 2D electron micrographs.
+### The present algorithm detects and localizes presynaptic vesicles in electron micrographs.
 
 
 ## Prerequisites 
