@@ -30,7 +30,7 @@ Measuring the pixel size. To allow vesicle detection on EM images with different
 ## Starting the analysis
 
 1.	Move the images to be analysed in the directory vesicles_analysis;
-2.	Run the script running analysis. This will automatically open a graphical user interface;
+2.	Run the script running_analysis.py. This will automatically open a graphical user interface;
 3.	Select Analysis > Vesicles detection;
 4.	Provide, as requested, an experiment name and the dimension of the pixels in nanometer.
 
