@@ -462,9 +462,8 @@ class VesAnalysisGui(tk.Frame):
         for x in range(0,np_img.shape[1],sliding_size):
 
             percentage=x/int(np_img.shape[1])*100
-            self.var.set('Processing image number: ' + str(self.counter) + ', done: {:.1f} %'.format(percentage))
+            self.var.set('Processing image number: ' + str(self.counter))
             
-            print('Done: {:.1f} %'.format(percentage))
             for y in range(0,np_img.shape[0],sliding_size):
                 snapshot=np_img_padded[y+20:y+window_size+20,x+20:x+window_size+20]
                 
