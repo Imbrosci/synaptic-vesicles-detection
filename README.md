@@ -5,12 +5,12 @@
 
 ## Prerequisites 
 
-1)	Anaconda with python 3 (https://www.anaconda.com/distribution/). We recommend to use python 3.6 or 3.7 and, if necessary, to create (and to activate) a virtual environment with one of these python versions. To create a virtual environment with python 3.6, type: conda create –n env_name anaconda python=3.6. To activate the created virtual enviroment type: conda activate env_name or source activate env_name 
+1)	Anaconda with python 3 (https://www.anaconda.com/distribution/). We have tested the algorithm with python 3.6, 3.7, 3.8 and 3.9. We recommend to use one of these python versions. If another python version in your default one, you can create a virtual environment, with one of these python versions. For instance, to create a virtual environment with python 3.9, type: conda create –n env_name anaconda python=3.6. To activate the created virtual enviroment type: conda activate env_name or source activate env_name 
 (*env_name may be a name of your choice);
 
-2)	pytorch torchvision, please to install pytorch torchvision correctly follow the instruction at: https://pytorch.org/; 
+2)	PyTorch (used version 1.10). The installation command depends on your Operating System and Compute Platform, please to install pytorch torchvision correctly follow the instruction at: https://pytorch.org/; 
 
-3) Additional required dependencies can be installed using the provided requirements.txt file. To this end, save first the requirements.txt file, navigate to the directory where you saved this file and type the following command: pip install -r requirements.txt.
+3) Additional required dependencies can be installed using the provided requirements.txt file. To this end, save first the requirements.txt file, by cloning our repository (see below), navigate to the directory where this file is saved and type the following command: pip install -r requirements.txt.
 
 
 ## Installation 
@@ -32,7 +32,7 @@ Measuring the pixel size. To allow vesicle detection on EM images with different
 1.	Move the images to be analysed in the directory vesicles_analysis;
 2.	Run the script running_analysis.py. This will automatically open a graphical user interface;
 3.	Select Analysis > Vesicles detection;
-4.	Provide, as requested, an experiment name and the dimension of the pixels in nanometer.
+4.	Provide, as requested, an experiment name and the dimension of the pixels in nanometer and choose if you want the algorithm to estimate the vesicles area by typing 'y' or 'n' (and not yes or not). If you type a different letter or a different text, the algorithm is, by default, not going to estimate the vesicles area. Be aware, that if you decide to include this analysis, the algorithm may take a bit longer to process images.  
 
 If everything works correctly the analysis will start automatically within a few seconds.
 
