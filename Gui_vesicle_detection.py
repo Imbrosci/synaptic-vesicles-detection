@@ -294,7 +294,7 @@ class VesAnalysisGui(tk.Frame):
             label1.config(font=('helvetica', 12))
             self.canvas1.create_window(400, 250, window=label1)
             button1 = tk.Button(self.master, text='Click here to try again',
-                                command=self.image_plus_result1,
+                                command=self.image_plus_results1,
                                 font=('Helvetica', '10'))
             self.canvas1.create_window(400, 350, window=button1)
         try:
