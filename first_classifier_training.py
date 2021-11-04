@@ -6,7 +6,7 @@ Train the first vesicle classifier and evaluate its performance
 on the training and validation datasets.
 It is necessary to have the datasets in the current working directory (cwd).
 
-The datasets should be organize as following:
+The datasets should be organize as follows:
 
     data_first_classifier>
         train>
