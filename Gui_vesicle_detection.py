@@ -48,7 +48,7 @@ class VesAnalysisGui(tk.Frame):
         display = tk.Menu(menu)
 
         menu.add_cascade(label="Analysis", menu=run_analysis)
-        menu.add_cascade(label="Results_check", menu=display)
+        menu.add_cascade(label="Results check", menu=display)
 
         run_analysis.add_command(label="Vesicles detection",
                                  command=self.start_analysis1)
