@@ -5,7 +5,7 @@
 
 ## Prerequisites 
 
-1)	Anaconda with python 3 (https://www.anaconda.com/distribution/). The present algorithm was tested on python 3.7, 3.8 or 3.9. We recommend to create a virtual environment, with one of these versions. For instance, to create a virtual environment with python 3.9, type: conda create –n env_name anaconda python=3.9. To activate the created virtual enviroment type: conda activate env_name (*env_name may be a name of your choice). 
+1)	Anaconda with python 3 (https://www.anaconda.com/distribution/). The present algorithm was tested on python 3.7, 3.8 or 3.9. We recommend to create a virtual environment, with one of these versions. For instance, to create a virtual environment with python 3.9, type: conda create –n env_name anaconda python=3.9. If you already have anaconda with one of the tested version of python, type: conda create -n env_name. To activate the created virtual enviroment type: conda activate env_name (*env_name may be a name of your choice).
 
 2)	PyTorch (used version 1.10). The installation command depends on your Operating System and Compute Platform, to install PyTorch correctly please follow the instruction at: https://pytorch.org/. 
 
