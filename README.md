@@ -5,12 +5,11 @@
 
 ## Prerequisites 
 
-1)	Anaconda with python 3 (https://www.anaconda.com/distribution/). We recommend to run the present algorithm with python 3.7, 3.8 or 3.9. If another python version is your default one, you can create a virtual environment, with one of these versions. For instance, to create a virtual environment with python 3.9, type: conda create –n env_name anaconda python=3.9. To activate the created virtual enviroment type: conda activate env_name (*env_name may be a name of your choice).
+1)	Anaconda with python 3 (https://www.anaconda.com/distribution/). The present algorithm was tested on python 3.7, 3.8 or 3.9. We recommend to create a virtual environment, with one of these versions. For instance, to create a virtual environment with python 3.9, type: conda create –n env_name anaconda python=3.9. To activate the created virtual enviroment type: conda activate env_name (*env_name may be a name of your choice). 
 
 2)	PyTorch (used version 1.10). The installation command depends on your Operating System and Compute Platform, to install PyTorch correctly please follow the instruction at: https://pytorch.org/. 
 
-3) Additional required dependencies can be installed using the provided requirements.txt file. To this end, save first the requirements.txt file, by cloning this repository (see below), navigate to the synaptic-vesicles-detection folder, where this file is saved, and type the following command: pip install -r requirements.txt.
-
+3) Additional required libraries can be installed using the requirements.txt file which can be found in this repository. The installation of these libraries should be done after cloning the repository (see Installation section below). 
 
 ## Installation 
 
@@ -19,7 +18,7 @@ https://github.com/Imbrosci/synaptic-vesicles-detection.git.
 The file model.pth and model_post.pth, containing the trained first and second classifier, respectively, are too big to be downloaded by git and therefore are replaced by a text file while cloning the repository. In order to download them correctly, after having cloned-downloaded the repository, go to: 
 https://github.com/Imbrosci/synaptic-vesicles-detection/blob/master/vesicles_analysis/model.pth and https://github.com/Imbrosci/synaptic-vesicles-detection/blob/master/vesicles_analysis/model_post.pth and click download to download the two files manually. 
 Then, replace the model.pth and model_post.pth files downloaded by git with the manually downloaded ones in the folder synaptic-vesicles-detection/vesicles_analysis.  
-
+Finally, install the required libraries listed in requirements.txt. To this end, navigate to the synaptic-vesicles-detection folder (where the requirements.txt file should be located) and type the following command: pip install -r requirements.txt.
 
 ## Preliminary step before starting the analysis 
 
